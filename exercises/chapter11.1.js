@@ -1,9 +1,9 @@
 const lengthStrings = (array = []) => {
-  const lastIndex = array.length - 1;
-  if (array.length === 1) {
-    return array[lastIndex].length;
+  if (array.length === 0) {
+    return 0;
   }
 
+  const lastIndex = array.length - 1;
   return lengthStrings(array.slice(0, lastIndex)) + array[lastIndex].length;
 };
 
