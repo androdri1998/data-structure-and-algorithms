@@ -1,4 +1,8 @@
 const { LinkedList, Node } = require("./linkedList");
+const {
+  DoublyLinkedList,
+  Node: DoublyLinkedListNode,
+} = require("./doublyLinkedList");
 
 const node1 = new Node("a");
 const node2 = new Node("b");
@@ -26,3 +30,11 @@ linkedList.printList();
 // output: b
 // output: c
 // output: d
+
+const doublyLinkedList = new DoublyLinkedList();
+doublyLinkedList.insertAtEnd("a");
+doublyLinkedList.insertAtEnd("b");
+doublyLinkedList.insertAtEnd("c");
+doublyLinkedList.insertAtEnd("d");
+console.log(doublyLinkedList.indexOf("c"));
+// output: 2
