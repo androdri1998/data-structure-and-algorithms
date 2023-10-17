@@ -29,8 +29,14 @@ linkedList.printList();
 // output: d
 console.log(linkedList.getlastNode().data);
 // output: d
-
+linkedList.reverseList();
+linkedList.printList();
+// output: d
+// output: c
+// output: b
+// output: a
 console.log("----------");
+
 const doublyLinkedList = new DoublyLinkedList();
 doublyLinkedList.insertAtEnd("a");
 doublyLinkedList.insertAtEnd("b");

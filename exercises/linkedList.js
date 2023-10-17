@@ -119,6 +119,27 @@ class LinkedList {
 
     return currentNode;
   }
+
+  reverseList() {
+    let currentNode = this.getHead();
+
+    let tempNode = null;
+    let firstNode = null;
+
+    while (currentNode) {
+      let node = new Node(currentNode.getData());
+      node.setNextNode(tempNode);
+      tempNode = node;
+
+      const nextNode = currentNode.getNextNode();
+      if (nextNode === null) {
+        firstNode = node;
+      }
+      currentNode = nextNode;
+    }
+
+    this.setHead(firstNode);
+  }
 }
 
 module.exports = {
