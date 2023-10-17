@@ -4,6 +4,10 @@ class Node {
     this.nextNode = null;
   }
 
+  getData() {
+    return this.data;
+  }
+
   setNextNode(node) {
     this.nextNode = node;
   }
@@ -39,7 +43,7 @@ class LinkedList {
       }
     }
 
-    return currentNode.data;
+    return currentNode.getData();
   }
 
   indexOf(value) {
@@ -47,7 +51,7 @@ class LinkedList {
     let currentNode = this.getHead();
 
     do {
-      if (currentNode.data === value) {
+      if (currentNode.getData() === value) {
         return currentIndex;
       }
 
@@ -95,6 +99,15 @@ class LinkedList {
 
     const nodeAfterDeletedNode = currentNode.getNextNode().getNextNode();
     currentNode.setNextNode(nodeAfterDeletedNode);
+  }
+
+  printList() {
+    let currentNode = this.getHead();
+
+    while (currentNode) {
+      console.log(currentNode.getData());
+      currentNode = currentNode.getNextNode();
+    }
   }
 }
 

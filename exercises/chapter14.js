@@ -21,3 +21,8 @@ console.log(linkedList.read(2));
 linkedList.deleteAtIndex(2);
 console.log(linkedList.read(2));
 // output: c
+linkedList.printList();
+// output: a
+// output: b
+// output: c
+// output: d
