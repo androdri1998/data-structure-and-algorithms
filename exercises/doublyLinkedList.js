@@ -92,6 +92,15 @@ class DoublyLinkedList {
     this.lastNode.setNextNode(node);
     this.lastNode = node;
   }
+
+  printReverse() {
+    let currentNode = this.getTail();
+
+    while (currentNode) {
+      console.log(currentNode.getData());
+      currentNode = currentNode.getPreviousNode();
+    }
+  }
 }
 
 module.exports = {

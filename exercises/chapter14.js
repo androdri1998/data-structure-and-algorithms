@@ -38,3 +38,8 @@ doublyLinkedList.insertAtEnd("c");
 doublyLinkedList.insertAtEnd("d");
 console.log(doublyLinkedList.indexOf("c"));
 // output: 2
+doublyLinkedList.printReverse();
+// output: d
+// output: c
+// output: b
+// output: a
