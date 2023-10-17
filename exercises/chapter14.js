@@ -27,7 +27,10 @@ linkedList.printList();
 // output: b
 // output: c
 // output: d
+console.log(linkedList.getlastNode().data);
+// output: d
 
+console.log("----------");
 const doublyLinkedList = new DoublyLinkedList();
 doublyLinkedList.insertAtEnd("a");
 doublyLinkedList.insertAtEnd("b");

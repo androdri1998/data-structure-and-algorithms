@@ -109,6 +109,16 @@ class LinkedList {
       currentNode = currentNode.getNextNode();
     }
   }
+
+  getlastNode() {
+    let currentNode = this.getHead();
+
+    while (currentNode.getNextNode()) {
+      currentNode = currentNode.getNextNode();
+    }
+
+    return currentNode;
+  }
 }
 
 module.exports = {
