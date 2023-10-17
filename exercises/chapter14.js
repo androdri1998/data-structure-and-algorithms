@@ -35,6 +35,13 @@ linkedList.printList();
 // output: c
 // output: b
 // output: a
+linkedList.insertAtIndex(2, "test");
+console.log(linkedList.read(2));
+// output: test
+const nodeMiddle = linkedList.getNodeAt(2);
+linkedList.deleteNode(nodeMiddle);
+console.log(linkedList.read(2));
+// output: b
 console.log("----------");
 
 const doublyLinkedList = new DoublyLinkedList();

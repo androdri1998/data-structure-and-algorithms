@@ -46,6 +46,22 @@ class LinkedList {
     return currentNode.getData();
   }
 
+  getNodeAt(index) {
+    let currentNode = this.getHead();
+    let currentIndex = 0;
+
+    while (currentIndex < index) {
+      currentNode = currentNode.getNextNode();
+      currentIndex += 1;
+
+      if (currentNode === null) {
+        return null;
+      }
+    }
+
+    return currentNode;
+  }
+
   indexOf(value) {
     let currentIndex = 0;
     let currentNode = this.getHead();
@@ -95,6 +111,22 @@ class LinkedList {
     while (currentIndex < index - 1) {
       currentNode = currentNode.getNextNode();
       currentIndex += 1;
+    }
+
+    const nodeAfterDeletedNode = currentNode.getNextNode().getNextNode();
+    currentNode.setNextNode(nodeAfterDeletedNode);
+  }
+
+  deleteNode(node) {
+    let currentNode = this.getHead();
+
+    if (currentNode.getData() === node.getData()) {
+      this.setHead(currentNode.getNextNode());
+      return;
+    }
+
+    while (currentNode.getNextNode().getData() !== node.getData()) {
+      currentNode = currentNode.getNextNode();
     }
 
     const nodeAfterDeletedNode = currentNode.getNextNode().getNextNode();
