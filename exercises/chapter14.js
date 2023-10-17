@@ -1,8 +1,5 @@
 const { LinkedList, Node } = require("./linkedList");
-const {
-  DoublyLinkedList,
-  Node: DoublyLinkedListNode,
-} = require("./doublyLinkedList");
+const { DoublyLinkedList } = require("./doublyLinkedList");
 
 const node1 = new Node("a");
 const node2 = new Node("b");
