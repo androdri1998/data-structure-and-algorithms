@@ -21,3 +21,5 @@ root.insert(86, root);
 console.log(root.findGreatestNode(root));
 console.log("-------");
 root.traverseAndPrintPreorder(root);
+console.log("-------");
+root.traverseAndPrintPostorder(root);
