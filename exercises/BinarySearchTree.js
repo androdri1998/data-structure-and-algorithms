@@ -83,9 +83,9 @@ class TreeNode {
       return;
     }
 
-    this.traverseAndPrint(node.rightChild);
+    this.traverseAndPrintReverse(node.rightChild);
     console.log(node.value);
-    this.traverseAndPrint(node.leftChild);
+    this.traverseAndPrintReverse(node.leftChild);
   }
 
   traverseAndPrintPreorder(node) {
