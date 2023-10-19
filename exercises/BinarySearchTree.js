@@ -88,6 +88,17 @@ class TreeNode {
     this.traverseAndPrint(node.leftChild);
   }
 
+  traverseAndPrintPreorder(node) {
+    if (node === null) {
+      return;
+    }
+
+    console.log(node.value);
+
+    this.traverseAndPrintPreorder(node.leftChild);
+    this.traverseAndPrintPreorder(node.rightChild);
+  }
+
   findGreatestNode(node) {
     if (node.rightChild === null) {
       return node;
