@@ -87,6 +87,14 @@ class TreeNode {
     console.log(node.value);
     this.traverseAndPrint(node.leftChild);
   }
+
+  findGreatestNode(node) {
+    if (node.rightChild === null) {
+      return node;
+    }
+
+    return this.findGreatestNode(node.rightChild);
+  }
 }
 
 module.exports = {
