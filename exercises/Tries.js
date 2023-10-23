@@ -1,6 +1,6 @@
 class TrieNode {
   constructor() {
-    this.children = {};
+    this.children = new Map();
   }
 }
 
@@ -44,7 +44,7 @@ class Trie {
 
     for (let [key, childNode] of currentNode.children.entries()) {
       if (key === "*") {
-        words.push(key);
+        words.push(word);
       } else {
         this.collectAllWords(childNode, word.concat(key), words);
       }
@@ -60,6 +60,20 @@ class Trie {
     }
 
     return this.collectAllWords(currentNode);
+  }
+
+  printAllKeys(node = null) {
+    let currentNode = node || this.root;
+
+    for (let [key, childNode] of currentNode.children.entries()) {
+      console.log(key);
+
+      if (key === "*") {
+        return;
+      } else {
+        this.printAllKeys(childNode);
+      }
+    }
   }
 }
 
