@@ -38,3 +38,5 @@ trie.printAllKeys();
 // output: i
 // output: a
 // output: *
+console.log(trie.autocorrect(null, "livreyo"));
+// output: livreto

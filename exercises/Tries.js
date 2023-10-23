@@ -62,6 +62,23 @@ class Trie {
     return this.collectAllWords(currentNode);
   }
 
+  autocorrect(node = null, prefix = "") {
+    let currentNode = node || this.root;
+    let word = "";
+
+    for (let char of prefix) {
+      if (!currentNode.children.has(char)) {
+        break;
+      }
+
+      word = word.concat(char);
+      currentNode = currentNode.children.get(char);
+    }
+
+    let prefixNode = this.search(word);
+    return this.collectAllWords(prefixNode, word)[0] || null;
+  }
+
   printAllKeys(node = null) {
     let currentNode = node || this.root;
 
