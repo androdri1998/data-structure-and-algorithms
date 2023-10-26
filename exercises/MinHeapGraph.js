@@ -1,4 +1,4 @@
-class MaxHeap {
+class MinHeapGraph {
   constructor() {
     this.data = [];
   }
@@ -27,10 +27,13 @@ class MaxHeap {
   insert(value) {
     this.data.push(value);
 
+    console.log(this.data);
+
     let newNodeIndex = this.data.length - 1;
     while (
       newNodeIndex > 0 &&
-      this.data[newNodeIndex] > this.data[this.parentIndex(newNodeIndex)]
+      this.data[newNodeIndex].value <
+        this.data[this.parentIndex(newNodeIndex)].value
     ) {
       const parentIndex = this.parentIndex(newNodeIndex);
 
@@ -43,23 +46,23 @@ class MaxHeap {
     }
   }
 
-  hasGreaterChild(index) {
+  hasSmallererChild(index) {
     return (
       (this.data[this.leftChildIndex(index)] &&
-        this.data[this.leftChildIndex(index)] > this.data[index]) ||
+        this.data[this.leftChildIndex(index)].value < this.data[index].value) ||
       (this.data[this.rightChildIndex(index)] &&
-        this.data[this.rightChildIndex(index)] > this.data[index])
+        this.data[this.rightChildIndex(index)].value < this.data[index].value)
     );
   }
 
-  calculateLargerChildIndex(index) {
+  calculateSmallerChildIndex(index) {
     if (!this.data[this.rightChildIndex(index)]) {
       return this.leftChildIndex(index);
     }
 
     if (
-      this.data[this.rightChildIndex(index)] >
-      this.data[this.leftChildIndex(index)]
+      this.data[this.rightChildIndex(index)].value <
+      this.data[this.leftChildIndex(index)].value
     ) {
       return this.rightChildIndex(index);
     }
@@ -75,21 +78,23 @@ class MaxHeap {
     }
 
     this.data[0] = this.data.pop();
+    console.log(this.data);
     let currentNodeIndex = 0;
 
-    while (this.hasGreaterChild(currentNodeIndex)) {
-      const largerChildIndex = this.calculateLargerChildIndex(currentNodeIndex);
+    while (this.hasSmallererChild(currentNodeIndex)) {
+      const smallerChildIndex =
+        this.calculateSmallerChildIndex(currentNodeIndex);
 
-      [this.data[currentNodeIndex], this.data[largerChildIndex]] = [
-        this.data[largerChildIndex],
+      [this.data[currentNodeIndex], this.data[smallerChildIndex]] = [
+        this.data[smallerChildIndex],
         this.data[currentNodeIndex],
       ];
 
-      currentNodeIndex = largerChildIndex;
+      currentNodeIndex = smallerChildIndex;
     }
   }
 }
 
 module.exports = {
-  MaxHeap,
+  MinHeapGraph,
 };

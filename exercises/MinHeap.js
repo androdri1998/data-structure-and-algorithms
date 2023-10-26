@@ -68,6 +68,12 @@ class MinHeap {
   }
 
   delete() {
+    if (this.data.length <= 1) {
+      this.data.pop();
+      this.data = [];
+      return;
+    }
+
     this.data[0] = this.data.pop();
     let currentNodeIndex = 0;
 
