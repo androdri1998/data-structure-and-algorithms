@@ -1,4 +1,5 @@
 const { Vertex, dfsTraverse, dfsSearch, bfsTraverse } = require("./Graphs");
+const { WeightedGraphVertex } = require("./WeightedGraphVertex");
 
 const one = new Vertex("one");
 const two = new Vertex("two");
@@ -58,3 +59,17 @@ bfsTraverse(one);
 // output: seven
 // output: eight
 // output: nine
+console.log("------------");
+const oneVetice = new WeightedGraphVertex("one");
+const twoVetice = new WeightedGraphVertex("two");
+const threeVetice = new WeightedGraphVertex("three");
+const fourVetice = new WeightedGraphVertex("four");
+const fiveVetice = new WeightedGraphVertex("five");
+
+oneVetice.addAdjacentVertex(twoVetice, 100);
+oneVetice.addAdjacentVertex(fourVetice, 160);
+twoVetice.addAdjacentVertex(threeVetice, 120);
+twoVetice.addAdjacentVertex(fourVetice, 180);
+threeVetice.addAdjacentVertex(fiveVetice, 80);
+fourVetice.addAdjacentVertex(threeVetice, 40);
+fourVetice.addAdjacentVertex(fiveVetice, 140);
