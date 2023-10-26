@@ -27,8 +27,6 @@ class MinHeapGraph {
   insert(value) {
     this.data.push(value);
 
-    console.log(this.data);
-
     let newNodeIndex = this.data.length - 1;
     while (
       newNodeIndex > 0 &&
