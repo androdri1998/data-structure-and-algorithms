@@ -81,9 +81,38 @@ const bfsTraverse = (startingVertex) => {
   }
 };
 
+const bfsSearch = (startingVertex, searchValue) => {
+  if (startingVertex.value === searchValue) {
+    return startingVertex;
+  }
+
+  const queue = new Queue();
+
+  const visitedVertices = new Map();
+  visitedVertices.set(startingVertex.value, true);
+  queue.enqueue(startingVertex);
+
+  while (queue.read()) {
+    const currentVertex = queue.dequeue();
+    if (currentVertex.value === searchValue) {
+      return currentVertex;
+    }
+
+    for (let adjacentVertex of currentVertex.adjacentVertices) {
+      if (!visitedVertices.has(adjacentVertex.value)) {
+        visitedVertices.set(adjacentVertex.value);
+        queue.enqueue(adjacentVertex);
+      }
+    }
+  }
+
+  return null;
+};
+
 module.exports = {
   Vertex,
   dfsTraverse,
   dfsSearch,
   bfsTraverse,
+  bfsSearch,
 };

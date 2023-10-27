@@ -1,4 +1,10 @@
-const { Vertex, dfsTraverse, dfsSearch, bfsTraverse } = require("./Graphs");
+const {
+  Vertex,
+  dfsTraverse,
+  dfsSearch,
+  bfsTraverse,
+  bfsSearch,
+} = require("./Graphs");
 const { WeightedGraphVertex } = require("./WeightedGraphVertex");
 const { dijkstraShortestPath } = require("./DijkstrasAlgorithm");
 
@@ -77,3 +83,14 @@ fourVetice.addAdjacentVertex(fiveVetice, 140);
 
 console.log(dijkstraShortestPath(oneVetice, fiveVetice));
 // [ 'one', 'four', 'three', 'five' ]
+console.log("------------");
+console.log(bfsSearch(one, "eight"));
+// output: Vertex {
+//     value: 'eight',
+//     adjacentVertices: [
+//         Vertex { value: 'four', adjacentVertices: [Array] },
+//         Vertex { value: 'nine', adjacentVertices: [Array] }
+//     ]
+// }
+console.log(bfsSearch(one, "none"));
+// output: null
