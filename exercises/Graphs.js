@@ -1,5 +1,4 @@
 const { Queue } = require("./Queue");
-
 class Vertex {
   constructor(value) {
     this.value = value;
@@ -109,10 +108,62 @@ const bfsSearch = (startingVertex, searchValue) => {
   return null;
 };
 
+const shortestPath = (startVertex, finalVertex) => {
+  const queue = new Queue();
+
+  const cheapestPathTable = new Map();
+  const cheapestPreviousVertexTable = new Map();
+
+  const visitedVertices = new Map();
+  visitedVertices.set(startVertex.value, true);
+  cheapestPathTable.set(startVertex.value, 0);
+  queue.enqueue(startVertex);
+
+  while (queue.read()) {
+    const currentVertex = queue.dequeue();
+
+    for (let adjacentVertex of currentVertex.adjacentVertices) {
+      const valueThroughCurrentVertice =
+        cheapestPathTable.get(currentVertex.value) + 1;
+
+      if (
+        !cheapestPathTable.get(adjacentVertex.value) ||
+        valueThroughCurrentVertice < cheapestPathTable.get(adjacentVertex.value)
+      ) {
+        cheapestPathTable.set(adjacentVertex.value, valueThroughCurrentVertice);
+        cheapestPreviousVertexTable.set(
+          adjacentVertex.value,
+          currentVertex.value
+        );
+      }
+
+      if (!visitedVertices.has(adjacentVertex.value)) {
+        visitedVertices.set(adjacentVertex.value);
+        queue.enqueue(adjacentVertex);
+      }
+    }
+  }
+
+  const shortestPath = [];
+  let currentVertexValue = finalVertex.value;
+
+  while (currentVertexValue !== startVertex.value) {
+    shortestPath.push(currentVertexValue);
+    currentVertexValue = cheapestPreviousVertexTable.get(currentVertexValue);
+  }
+
+  shortestPath.push(startVertex.value);
+  return {
+    steps: cheapestPathTable.get(finalVertex.value),
+    path: shortestPath.reverse(),
+  };
+};
+
 module.exports = {
   Vertex,
   dfsTraverse,
   dfsSearch,
   bfsTraverse,
   bfsSearch,
+  shortestPath,
 };

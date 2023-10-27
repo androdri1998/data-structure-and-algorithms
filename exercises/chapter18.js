@@ -4,6 +4,7 @@ const {
   dfsSearch,
   bfsTraverse,
   bfsSearch,
+  shortestPath,
 } = require("./Graphs");
 const { WeightedGraphVertex } = require("./WeightedGraphVertex");
 const { dijkstraShortestPath } = require("./DijkstrasAlgorithm");
@@ -94,3 +95,26 @@ console.log(bfsSearch(one, "eight"));
 // }
 console.log(bfsSearch(one, "none"));
 // output: null
+console.log("------------");
+const oneVertex = new Vertex("one");
+const twoVertex = new Vertex("two");
+const threeVertex = new Vertex("three");
+const fourVertex = new Vertex("four");
+const fiveVertex = new Vertex("five");
+const sixVertex = new Vertex("six");
+const sevenVertex = new Vertex("seven");
+
+oneVertex.addAdjacentVertice(twoVertex);
+oneVertex.addAdjacentVertice(threeVertex);
+
+twoVertex.addAdjacentVertice(fourVertex);
+
+threeVertex.addAdjacentVertice(fiveVertex);
+
+fourVertex.addAdjacentVertice(sevenVertex);
+
+fiveVertex.addAdjacentVertice(sixVertex);
+
+sixVertex.addAdjacentVertice(sevenVertex);
+
+console.log(shortestPath(oneVertex, fourVertex));
