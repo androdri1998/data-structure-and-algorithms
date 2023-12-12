@@ -17,8 +17,7 @@ This is a project to practice code based in a book of data structures and algori
 | ---------------------------------------------------------- | ----------------------------------------------------------- |
 | [Binary search](/data-structures/BinarySearchTree.js)      | Binary search implemented into a binary tree data structure |
 | [Double linked list](/data-structures/doublyLinkedList.js) | Double linked list data structure                           |
-| [Linked list](/data-structures/linkedList.js)              | Linked list                                                 |
-| data structure                                             |
+| [Linked list](/data-structures/linkedList.js)              | Linked list data structure                                  |
 | [Max heap](/data-structures/MaxHeap.js)                    | Max heap data structure                                     |
 | [Min heap](/data-structures/MinHeap.js)                    | Min heap data structure                                     |
 | [Ordered Array](/data-structures/OrdererdArrays.js)        | Ordered array data structure                                |
