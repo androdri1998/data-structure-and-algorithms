@@ -1,5 +1,5 @@
-const { MaxHeap } = require("./MaxHeap");
-const { MinHeap } = require("./MinHeap");
+const { MaxHeap } = require("../data-structures/MaxHeap");
+const { MinHeap } = require("../data-structures/MinHeap");
 
 const maxHeap = new MaxHeap();
 maxHeap.insert(3);

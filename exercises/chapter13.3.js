@@ -1,4 +1,4 @@
-const { sort } = require("./quicksort");
+const { sort } = require("../algorithms/quicksort");
 
 const arrayNumbers = [5, 3, 4, 2, 1, 0];
 

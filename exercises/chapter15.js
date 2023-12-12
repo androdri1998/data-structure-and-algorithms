@@ -1,4 +1,4 @@
-const { TreeNode } = require("./BinarySearchTree");
+const { TreeNode } = require("../data-structures/BinarySearchTree");
 
 const node1 = new TreeNode(30);
 const node2 = new TreeNode(80);

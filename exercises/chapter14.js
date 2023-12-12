@@ -1,5 +1,5 @@
-const { LinkedList, Node } = require("./linkedList");
-const { DoublyLinkedList } = require("./doublyLinkedList");
+const { LinkedList, Node } = require("../data-structures/linkedList");
+const { DoublyLinkedList } = require("../data-structures/doublyLinkedList");
 
 const node1 = new Node("a");
 const node2 = new Node("b");

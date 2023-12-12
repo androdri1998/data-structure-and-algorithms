@@ -1,4 +1,4 @@
-const { Queue } = require("./Queue");
+const { Queue } = require("../data-structures/Queue");
 class Vertex {
   constructor(value) {
     this.value = value;

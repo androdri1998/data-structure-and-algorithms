@@ -1,4 +1,4 @@
-const { sort } = require("./quicksort");
+const { sort } = require("../algorithms/quicksort");
 
 const findMissingNumber = (array) => {
   const length = array.length;

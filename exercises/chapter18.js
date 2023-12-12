@@ -5,9 +5,11 @@ const {
   bfsTraverse,
   bfsSearch,
   shortestPath,
-} = require("./Graphs");
-const { WeightedGraphVertex } = require("./WeightedGraphVertex");
-const { dijkstraShortestPath } = require("./DijkstrasAlgorithm");
+} = require("../algorithms/Graphs");
+const {
+  WeightedGraphVertex,
+} = require("../data-structures/WeightedGraphVertex");
+const { dijkstraShortestPath } = require("../algorithms/DijkstrasAlgorithm");
 
 const one = new Vertex("one");
 const two = new Vertex("two");

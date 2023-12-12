@@ -1,4 +1,4 @@
-const { stack } = require("./stack");
+const { stack } = require("../data-structures/stack");
 
 const reverseString = (word) => {
   const collection = stack();

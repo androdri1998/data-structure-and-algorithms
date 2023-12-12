@@ -1,4 +1,4 @@
-const { Trie } = require("./Tries");
+const { Trie } = require("../data-structures/Tries");
 
 const trie = new Trie();
 trie.insert("livro");
